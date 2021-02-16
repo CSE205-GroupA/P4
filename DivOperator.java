@@ -15,4 +15,19 @@
 /**
  * Represents the division operator which is a specific type of binary operator.
  */
-???
+public class DivOperator{
+	public DivOperator() {	
+	}
+	
+	public Operand evaluate(Operand pLhsOperand, Operand pRhsOperand) {
+		
+	}
+	
+	public int precedence() {
+		
+	}
+	
+	public int stackPrecedence() {
+		
+	}
+}
