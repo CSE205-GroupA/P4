@@ -45,7 +45,20 @@ public class Expression {
      *     token = call tokenizer.nextToken()
      * End While
      */
-    ???
+    public Expression(String pExprStr) {
+    	Queue<Token> mTokenQueue = new Queue<>();
+    	setTokenQueue(mTokenQueue);//???
+    	Tokenizer tokenizer = new Tokenizer(pExprStr);
+    	Token prevToken = new Token(null);
+    	Token token = new Token(tokenizer.nextToken());
+    	
+    	while(token != null) {
+    		if(token == SubOperator) {
+    			token = negationCheck(token, prevToken);
+    		}
+    		++token;
+    	}
+    }
 
     /**
      * Evaluates the expression and returns the result as a Double.
