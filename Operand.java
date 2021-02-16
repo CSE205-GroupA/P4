@@ -12,4 +12,17 @@
 /**
  * An operand is a numeric value represented as a Double.
  */
-???
+public class Operand{
+	private Double mValue;
+	
+	public Operand(Double pValue) {
+	}
+	
+	public Double getValue() {
+		
+	}
+	
+	public void setValue(Double pValue) {
+		
+	}
+}
