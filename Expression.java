@@ -13,7 +13,7 @@ import java.util.Stack.push();
 /**
  * Represents an infix expression to be evaluated.
  */
-public class Expression {
+public class Expression extends Stack{
 
     /**
      * A queue which stores the tokens of the infix expression in the order in which they were input.
@@ -96,7 +96,7 @@ public class Expression {
     public double evaluate() {
     	Stack<Operator> operatorStack = new Stack<>();
     	Stack<Operand> operandStack = new Stack<>();
-    	while(mToken != null) {
+    	while(mTokenQueue != null) {
     		Token token = new Token<>();
     		token = getTokenQueue().dequeue();
     		if(token instanceof Operand) {
@@ -172,6 +172,23 @@ public class Expression {
      *     Push the returned Operand from the above statement onto the operand stack
      * End If
      */
-    ???
+    
+    //still needs to typecast 
+    private void topEval(Stack<Operator> pOperatorStack, Stack<Operand> pOperandStack) {
+    	Operand right = new Operand();
+    	right = pOperandStack.pop();
+    	Operator operator = new Operator();
+    	operator = pOperatorStack.pop();
+    	if(operator instanceof UnaryOperator) {
+    		operator.evaluate(right);
+    	}
+    	else {
+    		Operand left = new Operand();
+    		left = pOperandStack.pop();
+    		operator.evaluate(left, right);
+    		operator.push(left);
+    	}
+    		
+    }
 
 }
