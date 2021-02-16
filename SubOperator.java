@@ -12,4 +12,20 @@
 /**
  * Represents the subtraction operator which is a specific type of binary operator.
  */
-???
+
+public class SubOperator{
+	public SubOperator() {
+	}
+	
+	public Operand evaluate(Operand pLhsOperand, Operand pRhsOperand) {
+		
+	}
+	
+	public int precedence() {
+		
+	}
+	
+	public int stackPrecedence() {
+		
+	}
+}
