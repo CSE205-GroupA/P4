@@ -11,7 +11,7 @@
 // * AUTHOR 3: Delaney Claussen , djclaus1, djclaus1@asu.edu
 // * AUTHOR 4: Taylor Hedrick, tmhedric, tmhedric@asu.edu
 //**************************************************************************************************************
-
+package P4;
 /**
  * The Tokenizer class scans a string containing an infix expression and breaks it into tokens. For this project,
  * a token will be either an Operand (a double value), a LeftParen or RightParen, or an arithmetic UnaryOperator

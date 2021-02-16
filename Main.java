@@ -1,5 +1,6 @@
 //***************************************************************************************************************************
 // CLASS: Main
+
 //
 // * COURSE AND PROJECT INFORMATION 
 // * CSE205 Object Oriented Programming and Data Structures, Spring 2021
@@ -11,6 +12,8 @@
 // * AUTHOR 3: Delaney Claussen , djclaus1, djclaus1@asu.edu
 // * AUTHOR 4: Taylor Hedrick, tmhedric, tmhedric@asu.edu
 //***************************************************************************************************************************
+package P4;
+
 import javax.swing.JFrame;
 
 /**

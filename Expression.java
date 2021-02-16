@@ -11,8 +11,9 @@
 // * AUTHOR 3: Delaney Claussen , djclaus1, djclaus1@asu.edu
 // * AUTHOR 4: Taylor Hedrick, tmhedric, tmhedric@asu.edu
 //**************************************************************************************************************
+package P4;
 
-import java.util.Stack.push();
+import java.util.Stack;
 /**
  * Represents an infix expression to be evaluated.
  */
@@ -100,10 +101,10 @@ public class Expression extends Stack{
     	Stack<Operator> operatorStack = new Stack<>();
     	Stack<Operand> operandStack = new Stack<>();
     	while(mTokenQueue != null) {
-    		Token token = new Token<>();
+    		Token token;
     		token = getTokenQueue().dequeue();
     		if(token instanceof Operand) {
-    			operatorStack.push((Operand)token);
+    			operatorStack.push(token);
     		}
     		else if(token instanceof LeftParen) {
 

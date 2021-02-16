@@ -11,7 +11,7 @@
 // * AUTHOR 3: Delaney Claussen , djclaus1, djclaus1@asu.edu
 // * AUTHOR 4: Taylor Hedrick, tmhedric, tmhedric@asu.edu
 //**************************************************************************************************************
-
+package P4;
 /**
  * Token is the abstract superclass of the different types of tokens that can appear in an infix expression.
  */
