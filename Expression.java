@@ -9,6 +9,7 @@
 // http://www.devlang.com
 //**************************************************************************************************************
 
+import java.util.Stack.push();
 /**
  * Represents an infix expression to be evaluated.
  */
@@ -53,10 +54,12 @@ public class Expression {
     	Token token = new Token(tokenizer.nextToken());
     	
     	while(token != null) {
-    		if(token == SubOperator) {
+    		if(token instanceof SubOperator) {
     			token = negationCheck(token, prevToken);
     		}
-    		++token;
+    		getTokenQueue().enqueue(token);
+    		prevToken = token;
+    		token = tokenizer.nextToken();
     	}
     }
 
@@ -90,7 +93,20 @@ public class Expression {
      * End While
      * Pop the top Operand from the operand stack and return its value (call getValue() on the Operand).
      */
-    ???
+    public double evaluate() {
+    	Stack<Operator> operatorStack = new Stack<>();
+    	Stack<Operand> operandStack = new Stack<>();
+    	while(mToken != null) {
+    		Token token = new Token<>();
+    		token = getTokenQueue().dequeue();
+    		if(token instanceof Operand) {
+    			operatorStack.push((Operand)token);
+    		}
+    		else if(token instanceof LeftParen) {
+
+    		}
+    	}
+    }
 
     /**
      * Accessor method for mTokenQueue.
