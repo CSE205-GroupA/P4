@@ -12,4 +12,19 @@
 /**
  * Operator is the superclass of all binary and unary operators.
  */
-???
+public class Operator{
+	public Operator() {
+	}
+	
+	public boolean isBinaryOperator() {
+		
+	}
+	
+	public int precedence() {
+		
+	}
+	
+	public int stackPrecedence() {
+		
+	}
+}
