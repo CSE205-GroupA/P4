@@ -75,7 +75,13 @@ public class View extends JFrame implements ActionListener {
         JPanel panelButtons = new JPanel(new FlowLayout());
         JButton mClearButton = new JButton("Clear");
         mClearButton.addActionListener(this);
+        JButton mEvalButton = new JButton("Eval");
+        mEvalButton.addActionListener(this);
+        JButton mExitButton = new JButton("Exit");
+        mExitButton.addActionListener(this);
         panelButtons.add(mClearButton);
+        panelButtons.add(mEvalButton);
+        panelButtons.add(mExitButton);
 
         // PSEUDOCODE
         // Create a JPanel named panelMain using a vertical BoxLayout.
