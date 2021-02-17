@@ -13,6 +13,7 @@
 //**************************************************************************************************************
 package P4;
 
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Box;
@@ -53,7 +54,7 @@ public class View extends JFrame implements ActionListener {
         // Create mResultLabel as a JLabel initialized to the empty string ""
         // Add mResultLabel to panelLabel
         JPanel panelLabel = new JPanel(new FlowLayout());
-        Jlabel mResultLabel = new JLabel("");
+        JLabel mResultLabel = new JLabel("");
         panelLabel.add(mResultLabel);
 
         // PSEUDOCODE:
@@ -124,7 +125,8 @@ public class View extends JFrame implements ActionListener {
     		exit(mMain);
     	}
     }
-    /**
+
+	/**
      * clear() is called when the Clear button is clicked. Set the text in mInputText and mResultLabel to the
      * empty strings "".
      */
@@ -146,10 +148,11 @@ public class View extends JFrame implements ActionListener {
     	String evalText = mInputText.getText();
     	Expression expr = new Expression(evalText);
     	Double result = expr.evaluate();
-    	mResultLabel(result.toString());
+    	mResultLabel.setText(result.toString());
     }
 
-    /**
+
+	/**
      * messageBox()
      *
      * Note that passing 'this' as the first arg causes the View to be the parent of the message
@@ -158,9 +161,6 @@ public class View extends JFrame implements ActionListener {
      * middle of the display.
      */
     
-    void messageBox(String mMessage) {
-    	JOptionPane.showMessageDialog(null, mMessage);
-    }
     public void messageBox(String pMessage) {
         JOptionPane.showMessageDialog(this, pMessage, "Message", JOptionPane.PLAIN_MESSAGE);
     }

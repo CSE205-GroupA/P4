@@ -54,8 +54,8 @@ public class Expression extends Stack{
     	Queue<Token> mTokenQueue = new Queue<>();
     	setTokenQueue(mTokenQueue);//???
     	Tokenizer tokenizer = new Tokenizer(pExprStr);
-    	Token prevToken = new Token(null);
-    	Token token = new Token(tokenizer.nextToken());
+    	Token prevToken = null;
+    	Token token = tokenizer.nextToken();
     	
     	while(token != null) {
     		if(token instanceof SubOperator) {
@@ -179,19 +179,19 @@ public class Expression extends Stack{
      * End If
      */
     
-    //still needs to typecast 
+ 
     private void topEval(Stack<Operator> pOperatorStack, Stack<Operand> pOperandStack) {
-    	Operand right = new Operand();
+    	Operand right = new Operand(null);
     	right = pOperandStack.pop();
     	Operator operator = new Operator();
     	operator = pOperatorStack.pop();
     	if(operator instanceof UnaryOperator) {
-    		operator.evaluate(right);
+    		((UnaryOperator) operator).evaluate(right);
     	}
     	else {
-    		Operand left = new Operand();
+    		Operand left = new Operand(null);
     		left = pOperandStack.pop();
-    		operator.evaluate(left, right);
+    		((BinaryOperator) operator).evaluate(left, right);
     		operator.push(left);
     	}
     		
