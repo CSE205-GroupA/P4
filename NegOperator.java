@@ -20,14 +20,14 @@ package P4;
 	}
 	
 	public Operand evaluate(Operand pOperand){
-		
+		return new Operand(pOperand);
 	}
 	
 	public int precedence() {
-		
+		return 4;
 	}
 	
 	public int stackPrecedence() {
-		
+		return 4;
 	}
  }

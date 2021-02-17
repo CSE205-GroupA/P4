@@ -17,7 +17,7 @@ import java.util.Stack;
 /**
  * Represents an infix expression to be evaluated.
  */
-public class Expression extends Stack{
+public class Expression{
 
     /**
      * A queue which stores the tokens of the infix expression in the order in which they were input.
@@ -183,7 +183,7 @@ public class Expression extends Stack{
     private void topEval(Stack<Operator> pOperatorStack, Stack<Operand> pOperandStack) {
     	Operand right = new Operand(null);
     	right = pOperandStack.pop();
-    	Operator operator = new Operator();
+    	Operator operator;
     	operator = pOperatorStack.pop();
     	if(operator instanceof UnaryOperator) {
     		((UnaryOperator) operator).evaluate(right);
