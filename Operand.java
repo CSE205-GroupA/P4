@@ -22,10 +22,10 @@ public class Operand{
 	}
 	
 	public Double getValue() {
-		
+		return mValue;
 	}
 	
 	public void setValue(Double pValue) {
-		
+		mValue = pValue;
 	}
 }
