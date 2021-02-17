@@ -15,19 +15,13 @@ package P4;
 /**
  * Operator is the superclass of all binary and unary operators.
  */
-public class Operator{
+public abstract class Operator{
 	public Operator() {
 	}
 	
-	public boolean isBinaryOperator() {
-		
-	}
+	public abstract boolean isBinaryOperator();
 	
-	public int precedence() {
-		
-	}
+	public abstract int precedence();
 	
-	public int stackPrecedence() {
-		
-	}
+	public abstract int stackPrecedence();
 }
