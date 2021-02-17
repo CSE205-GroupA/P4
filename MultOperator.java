@@ -20,15 +20,21 @@ public class MultOperator{
 		
 	}
 	
-	public Operand evaluate(Operand pLhsOperand, Operand pRhsOperand) {
-		
-	}
-	
-	public int precedence() {
-		
-	}
-	
-	public int stackPrecedence() {
-		
-	}
+    public Operand evaluate(Operand pLhsOperand, Operand pRhsOperand) {
+        return new Operand(pLhsOperand.getValue() * pRhsOperand.getValue());
+    }
+
+    /**
+     * Returns the normal precedence level of this operator.
+     */
+    public int precedence() {
+        return 3;
+    }
+
+    /**
+     * Returns the precedence level of this operator when on it is on the operator stack.
+     */
+    public int stackPrecedence() {
+        return 3;
+    }
 }
