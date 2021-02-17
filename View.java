@@ -48,7 +48,7 @@ public class View extends JFrame implements ActionListener {
      */
     public View(Main pMain) {
         // Save a reference to the Main object pMain in mMain.
-        setMain(pMain);
+    	mMain = pMain;
         // PSEUDOCODE:
         // Declare and create a JPanel named panelLabel using the default FlowLayout layout manager.
         // Create mResultLabel as a JLabel initialized to the empty string ""
@@ -98,7 +98,8 @@ public class View extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    /**
+
+	/**
      * actionPerformed()
      *
      * Called when one of the JButtons is clicked. Detects which button was clicked and handles it.
