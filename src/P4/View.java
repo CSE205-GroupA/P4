@@ -54,7 +54,7 @@ public class View extends JFrame implements ActionListener {
         // Create mResultLabel as a JLabel initialized to the empty string ""
         // Add mResultLabel to panelLabel
         JPanel panelLabel = new JPanel(new FlowLayout());
-        JLabel mResultLabel = new JLabel("");
+        mResultLabel = new JLabel("");
         panelLabel.add(mResultLabel);
 
         // PSEUDOCODE:
@@ -156,7 +156,7 @@ public class View extends JFrame implements ActionListener {
     	String evalText = mInputText.getText();
     	Expression expr = new Expression(evalText);
     	Double result = expr.evaluate();
-    	mResultLabel.setText(result.toString());
+    	mResultLabel.setText(Double.toString(result));
     }
 
 

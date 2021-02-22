@@ -102,7 +102,7 @@ public class Expression {
     public double evaluate() {
     	Stack<Operator> operatorStack = new Stack<>();
     	Stack<Operand> operandStack = new Stack<>();
-    	while(mTokenQueue != null) {
+    	while(!mTokenQueue.isEmpty()) {
     		Token token;
     		token = getTokenQueue().dequeue();
     		if(token instanceof Operand) {
@@ -125,7 +125,7 @@ public class Expression {
     			operatorStack.push(operator);
     		}
     	}
-    	while(operatorStack != null) {
+    	while(!operatorStack.isEmpty()) {
     		topEval(operatorStack, operandStack);
     	}
     	return operandStack.pop().getValue();
@@ -198,10 +198,10 @@ public class Expression {
     
  
     private void topEval(Stack<Operator> pOperatorStack, Stack<Operand> pOperandStack) {
-    	Operand right = new Operand(null);
-    	right = pOperandStack.pop();
-    	Operator operator;
-    	operator = pOperatorStack.pop();
+    	Operand right = pOperandStack.pop();
+    	
+    	Operator operator = pOperatorStack.pop();
+   
     	if(operator instanceof UnaryOperator) {
     		pOperandStack.push(((UnaryOperator) operator).evaluate(right));
     	}
