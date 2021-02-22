@@ -15,12 +15,12 @@ package P4;
 /**
  * Represents the negation operator which is a specific type of unary operator.
  */
- public class NegOperator extends UnaryOperators{
+ public class NegOperator extends UnaryOperator{
 	public NegOperator() {
 	}
 	
 	public Operand evaluate(Operand pOperand){
-		return new Operand(pOperand);
+		return new Operand(pOperand.getValue());
 	}
 	
 	public int precedence() {

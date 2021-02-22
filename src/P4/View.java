@@ -129,7 +129,7 @@ public class View extends JFrame implements ActionListener {
     		evaluate();
     	}
     	else if(mEvent.getSource() == mExitButton) {
-    		exit(mMain);
+    		mMain.exit();
     	}
     }
 

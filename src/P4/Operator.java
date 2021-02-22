@@ -15,7 +15,7 @@ package P4;
 /**
  * Operator is the superclass of all binary and unary operators.
  */
-public abstract class Operator{
+public abstract class Operator extends Token{
 	public Operator() {
 	}
 	

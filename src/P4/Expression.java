@@ -17,7 +17,7 @@ import java.util.Stack;
 /**
  * Represents an infix expression to be evaluated.
  */
-public class Expression{
+public class Expression {
 
     /**
      * A queue which stores the tokens of the infix expression in the order in which they were input.
