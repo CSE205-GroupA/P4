@@ -52,7 +52,7 @@ public class Expression {
      */
     public Expression(String pExprStr) {
     	Queue<Token> mTokenQueue = new Queue<>();
-    	setTokenQueue(mTokenQueue);//???
+    	setTokenQueue(mTokenQueue);
     	Tokenizer tokenizer = new Tokenizer(pExprStr);
     	Token prevToken = null;
     	Token token = tokenizer.nextToken();

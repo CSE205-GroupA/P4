@@ -16,10 +16,10 @@ package P4;
  * Represents the subtraction operator which is a specific type of binary operator.
  */
 
-public class SubOperator{
+public class SubOperator extends BinaryOperator{
 	public SubOperator() {
 	}
-	
+	@Override
     public Operand evaluate(Operand pLhsOperand, Operand pRhsOperand) {
         return new Operand(pLhsOperand.getValue() - pRhsOperand.getValue());
     }
@@ -27,6 +27,7 @@ public class SubOperator{
     /**
      * Returns the normal precedence level of this operator.
      */
+    @Override
     public int precedence() {
         return 2;
     }
@@ -34,6 +35,7 @@ public class SubOperator{
     /**
      * Returns the precedence level of this operator when on it is on the operator stack.
      */
+    @Override
     public int stackPrecedence() {
         return 2;
     }

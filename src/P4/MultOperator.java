@@ -15,11 +15,11 @@ package P4;
 /**
  * Represents the multiplication operator which is a specific type of binary operator.
  */
-public class MultOperator{
+public class MultOperator extends BinaryOperator{
 	public MultOperator() {
 		
 	}
-	
+	@Override
     public Operand evaluate(Operand pLhsOperand, Operand pRhsOperand) {
         return new Operand(pLhsOperand.getValue() * pRhsOperand.getValue());
     }
@@ -27,6 +27,7 @@ public class MultOperator{
     /**
      * Returns the normal precedence level of this operator.
      */
+    @Override
     public int precedence() {
         return 3;
     }
@@ -34,6 +35,7 @@ public class MultOperator{
     /**
      * Returns the precedence level of this operator when on it is on the operator stack.
      */
+    @Override
     public int stackPrecedence() {
         return 3;
     }
