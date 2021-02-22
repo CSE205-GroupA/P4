@@ -106,12 +106,29 @@ public class Expression {
     		Token token;
     		token = getTokenQueue().dequeue();
     		if(token instanceof Operand) {
-    			operatorStack.push(token);
+    			operandStack.push((Operand) token);
     		}
     		else if(token instanceof LeftParen) {
-
+    			operatorStack.push((LeftParen) token);
+    		}
+    		else if(token instanceof RightParen) {
+    			while (!(operatorStack.peek() instanceof LeftParen)) { //special topic 9.7 in text book. Not sure its being used right. 
+    				topEval(operatorStack, operandStack);
+    			}
+    			operatorStack.pop();
+    		}
+    		else {
+    			Operator operator = (Operator) token;
+    			while (keepEvaluating(operatorStack, operator) == true) {
+    				topEval(operatorStack, operandStack);
+    			}
+    			operatorStack.push(operator);
     		}
     	}
+    	while(operatorStack != null) {
+    		topEval(operatorStack, operandStack);
+    	}
+    	return operandStack.pop().getValue();
     }
 
     /**
@@ -186,13 +203,13 @@ public class Expression {
     	Operator operator;
     	operator = pOperatorStack.pop();
     	if(operator instanceof UnaryOperator) {
-    		((UnaryOperator) operator).evaluate(right);
+    		pOperandStack.push(((UnaryOperator) operator).evaluate(right));
     	}
     	else {
     		Operand left = new Operand(null);
     		left = pOperandStack.pop();
-    		((BinaryOperator) operator).evaluate(left, right);
-    		operator.push(left);
+    		pOperandStack.push(((BinaryOperator) operator).evaluate(left, right));
+    	
     	}
     		
     }
