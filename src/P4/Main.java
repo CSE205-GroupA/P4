@@ -41,7 +41,7 @@ public class Main {
     /**
      * Accessor method for mView.
      */
-    private View getView() {
+    private View getView() {//is this needed?
         return mView;
     }
 

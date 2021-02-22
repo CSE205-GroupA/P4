@@ -62,7 +62,7 @@ public class Tokenizer {
      * Machine (http://en.wikipedia.org/wiki/Finite-state_machine).
      */
     public Token nextToken() {
-        boolean scanning = true;
+        boolean scanning = true;//is this needed?
         int state = STATE_START, nextState = STATE_START;
         StringBuffer buffer = new StringBuffer();
         Token token = null;

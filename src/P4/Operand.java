@@ -18,6 +18,7 @@ package P4;
 public class Operand extends Token{
 	private Double mValue;
 	
+	
 	public Operand(Double pValue) {
 		setValue(pValue);
 	}
