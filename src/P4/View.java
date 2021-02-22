@@ -34,12 +34,12 @@ public class View extends JFrame implements ActionListener {
     public static final int FRAME_HEIGHT = 180;
 
     // Declare instance variables
-    private JButton         mClearButton;
-    private JButton         mEvalButton;
-    private JTextField      mInputText;
-    private JButton         mExitButton;
-    private Main            mMain;
-    private JLabel          mResultLabel;
+    private JButton mClearButton;
+    private JButton mEvalButton;
+    private JTextField mInputText;
+    private JButton mExitButton;
+    private Main mMain;
+    private JLabel mResultLabel;
 
     /**
      * View()
@@ -61,8 +61,8 @@ public class View extends JFrame implements ActionListener {
         // Declare and create a JPanel named panelInput using the default FlowLayout layout manager.
         // Create mInputText as a JTextField initialized to 40 columns wide
         // Add mInputText to panelInput
-        JPanel panelInput = new JPanel(new FlowLayout()); 
-        JTextField mInputText = new JTextField(40);
+        JPanel panelInput = new JPanel(new FlowLayout());
+        mInputText = new JTextField(40);
         panelInput.add(mInputText);
 
         // PSEUDOCODE:
@@ -73,15 +73,15 @@ public class View extends JFrame implements ActionListener {
         // Repeat the three above statements for the Evalute button.
         // Repeat the three above statements for the Exit button.
         JPanel panelButtons = new JPanel(new FlowLayout());
-        JButton mClearButton = new JButton("Clear");
+        mClearButton = new JButton("Clear");
         mClearButton.addActionListener(this);
-        JButton mEvalButton = new JButton("Eval");
-        mEvalButton.addActionListener(this);
-        JButton mExitButton = new JButton("Exit");
-        mExitButton.addActionListener(this);
         panelButtons.add(mClearButton);
+        mEvalButton = new JButton("Evaluate");
+        mEvalButton.addActionListener(this);
         panelButtons.add(mEvalButton);
-        panelButtons.add(mExitButton);
+        mExitButton = new JButton("Exit");
+        mExitButton.addActionListener(this);
+        panelButtons.add(mExitButton);  
 
         // PSEUDOCODE
         // Create a JPanel named panelMain using a vertical BoxLayout.
@@ -120,15 +120,16 @@ public class View extends JFrame implements ActionListener {
      * End If
      */
 
+
     @Override
-    public void actionPerformed(ActionEvent mEvent) {
-    	if(mEvent.getSource() == mClearButton) {
+    public void actionPerformed(ActionEvent pEvent) {
+    	if(pEvent.getSource() == mClearButton) {
     		clear();
     	}
-    	else if(mEvent.getSource() == mEvalButton) {
+    	else if(pEvent.getSource() == mEvalButton) {
     		evaluate();
     	}
-    	else if(mEvent.getSource() == mExitButton) {
+    	else if(pEvent.getSource() == mExitButton) {
     		mMain.exit();
     	}
     }
@@ -137,7 +138,7 @@ public class View extends JFrame implements ActionListener {
      * clear() is called when the Clear button is clicked. Set the text in mInputText and mResultLabel to the
      * empty strings "".
      */
-    void clear() {
+    private void clear() {
     	mInputText.setText("");
     	mResultLabel.setText("");
     }
@@ -151,7 +152,7 @@ public class View extends JFrame implements ActionListener {
      * Call expr.evaluate() and assign the return value a Double object named result
      * Display result in mResultLabel (call toString on result)
      */
-    void evaluate() {
+    private void evaluate() {
     	String evalText = mInputText.getText();
     	Expression expr = new Expression(evalText);
     	Double result = expr.evaluate();
