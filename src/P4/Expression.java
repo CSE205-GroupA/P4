@@ -134,7 +134,7 @@ public class Expression {
     /**
      * Accessor method for mTokenQueue.
      */
-    protected Queue<Token> getTokenQueue() {
+    private Queue<Token> getTokenQueue() {
         return mTokenQueue;
     }
 
